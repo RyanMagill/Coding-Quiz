@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coding Quiz</title>
+        <meta charset="utf-8">
+        <meta name="Author" content="Ryan Magill">
+        <meta name="Description" content="Random password generator">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    </head>
+    <style>
+        .hide {
+            display: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+
+    <body>
+        <div class="row">
+            <h1 class="col-sm-2">Score: <span id="score"></span> </h1>
+            <h1 class="col-sm-8">Coding Quiz</h1>
+            <h1 class="col-sm-1" id="gameTime"></h1>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <main class="col-sm-8"></main>
+            <div class="col-sm-2"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-5"></div>
+            <button class="col-sm-2"id="startButton" onclick="startQuiz()">Start Quiz</button>
+            <div class="col-sm-5"></div>
+
+        </div>
+        <script type="text/javascript" src="Questions.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+    
+</html>
