@@ -4,7 +4,7 @@
 //<script type="text/javascript" src="Question.js"></script>
 
 //Global Variables:
-var time = 10;
+var time = 60;
 var score = 0;
 var currentQuestion = 0;
 var answer = true;
@@ -30,7 +30,14 @@ main.addEventListener("click", function(event) {
             document.getElementById("score").innerHTML = score;
         }
         currentQuestion++;
+        
         renderQuestion();
+
+        if(currentQuestion === questionsList.length)
+        {
+            alert("Quiz is over! Check your score!");
+            window.clearInterval(trueTime);
+        }
     }
 });
 
