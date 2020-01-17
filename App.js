@@ -4,7 +4,7 @@
 //<script type="text/javascript" src="Question.js"></script>
 
 //Global Variables:
-var time = 60;
+var time = 10;
 var score = 0;
 var currentQuestion = 0;
 var answer = true;
@@ -12,6 +12,14 @@ var trueTime;
 
 var main = document.querySelector("main");
 //document.getElementById("score").innerHTML = score;
+
+if(currentQuestion === questionsList.length)
+{
+            alert("Quiz is over! Check your score!");
+            main.setAttribute("class", "hide");
+            window.clearInterval(trueTime);
+}
+
 
 //listens for user click on li tags
 main.addEventListener("click", function(event) {
@@ -33,11 +41,7 @@ main.addEventListener("click", function(event) {
         
         renderQuestion();
 
-        if(currentQuestion === questionsList.length)
-        {
-            alert("Quiz is over! Check your score!");
-            window.clearInterval(trueTime);
-        }
+        
     }
 });
 
@@ -89,10 +93,7 @@ function startQuiz(){
     trueTime = window.setInterval(myTimer, 1000);
     
     renderQuestion();
-
-    if(time === 0){
-        main.setAttribute("class", "hide");
-    }
+    
 }
 
 //timer
@@ -104,6 +105,7 @@ function myTimer(){
     }else if(time==0){
         document.getElementById("gameTime").innerHTML = time.toString();
          alert("Times up!");
+         main.setAttribute("class", "hide");
         window.clearInterval(trueTime);
     }
 }
